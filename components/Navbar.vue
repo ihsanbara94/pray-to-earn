@@ -9,8 +9,8 @@
           class="inline-block w-full py-2 mx-0 ml-6 font-medium text-left text-indigo-600 md:ml-0 md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center"
         >
           <img
-            src="/NewLogo.png"
-            alt="digidev"
+            :src="require(`/NewLogo.png`)"
+            alt="logo Coal"
             style="max-width: 70px; height: 50px"
           />
         </nuxt-link>
