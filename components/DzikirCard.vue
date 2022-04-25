@@ -10,7 +10,7 @@
         />
       </div>
       <Button content="+" @click="$emit('click')" />
-      <p :class="`text-3xl font-medium text-${dzikir.colorText}-500`">
+      <p class="text-3xl font-medium" :style="`color: ${dzikir.warna}`">
         {{ dzikir.counter }}
       </p>
     </div>

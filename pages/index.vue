@@ -1,27 +1,17 @@
 <template>
   <div>
     <Navbar />
-    <p>Todo List</p>
-    <div>
-      <input
-        type="text"
-        :placeholder="`${textInput}`"
-        class="px-4 py-2 w-[200px] border-2"
-      />
-      <Button content="+" />
-    </div>
+    <Dzikr />
   </div>
 </template>
 
 <script>
-import Button from "~/components/atoms/Button.vue";
 import Navbar from "../components/Navbar.vue";
+import Dzikr from "./dzikr.vue";
 export default {
-  components: { Button, Navbar },
+  components: { Navbar, Dzikr },
   data() {
-    return {
-      textInput: "Input Todo",
-    };
+    return {};
   },
 };
 </script>

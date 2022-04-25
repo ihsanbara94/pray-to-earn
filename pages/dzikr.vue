@@ -1,8 +1,7 @@
 <template>
   <div>
-    <Navbar />
     <div class="flex items-center px-10 space-x-3 justify-center">
-      <img src="/dzikr.png" alt="dzikr" class="h-12 w-12" />
+      <img :src="require(`~/static/dzikr.png`)" alt="dzikr" class="h-12 w-12" />
       <p class="text-3xl font-medium">Dzikir</p>
     </div>
     <div class="my-5" v-for="(dzikir, id) in dzikirData" :key="id">
@@ -13,8 +12,8 @@
 </template>
 
 <script>
-import Button from "../../components/atoms/Button.vue";
-import DzikirCard from "../../components/DzikirCard.vue";
+import Button from "../components/atoms/Button.vue";
+import DzikirCard from "../components/DzikirCard.vue";
 export default {
   components: { DzikirCard, Button },
   data() {
@@ -24,31 +23,31 @@ export default {
           lafaz: "Astaghfirullah",
           counter: 0,
           images: "istighfar",
-          colorText: "blue",
+          warna: "blue",
         },
         {
           lafaz: "Subhanallah",
           counter: 0,
           images: "subhanallah",
-          colorText: "blue",
+          warna: "blue",
         },
         {
           lafaz: "Alhamdulillah",
           counter: 0,
           images: "alhamdulillah",
-          colorText: "blue",
+          warna: "blue",
         },
         {
           lafaz: "Lailahaillallah",
           counter: 0,
           images: "lailaha",
-          colorText: "blue",
+          warna: "blue",
         },
         {
           lafaz: "Allahuakbar",
           counter: 0,
           images: "allahuakbar",
-          colorText: "blue",
+          warna: "blue",
         },
       ],
       detailDzikir: {},
@@ -59,18 +58,20 @@ export default {
       this.detailDzikir = dzikir;
       if (this.detailDzikir.counter + 1 <= 99) {
         this.detailDzikir.counter++;
-      }
-      if (33 <= this.detailDzikir.counter) {
-        this.detailDzikir.colorText = "red";
-      }
-      if (66 <= this.detailDzikir.counter) {
-        this.detailDzikir.colorText = "green";
+        if (33 <= this.detailDzikir.counter) {
+          this.detailDzikir.warna = "red";
+        }
+        if (66 <= this.detailDzikir.counter) {
+          this.detailDzikir.warna = "green";
+        }
       }
     },
     resetFcn() {
       let i;
-      for (i = 0; i <= this.dzikirData.length - 1; i++)
+      for (i = 0; i <= this.dzikirData.length - 1; i++) {
         this.dzikirData[i].counter = 0;
+        this.dzikirData[i].warna = "blue";
+      }
     },
   },
 };
