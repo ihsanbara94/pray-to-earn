@@ -9,7 +9,7 @@
           class="inline-block w-full py-2 mx-0 ml-6 font-medium text-left text-indigo-600 md:ml-0 md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center"
         >
           <img
-            :src="require(`~/static/NewLogo.png`)"
+            :src="require(`~/assets/images/NewLogo.png`)"
             alt="logo Coal"
             style="max-width: 70px; height: 50px"
           />

@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="flex items-center px-10 space-x-3 justify-center">
-      <img :src="require(`~/static/todo.png`)" alt="dzikr" class="h-12 w-12" />
+      <img
+        :src="require(`~/assets/images/todo.png`)"
+        alt="dzikr"
+        class="h-12 w-12"
+      />
       <p class="text-3xl font-medium">Todo List</p>
     </div>
     <div>

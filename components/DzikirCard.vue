@@ -5,7 +5,7 @@
         <p>{{ dzikir.lafaz }}</p>
         <img
           class="w-20 h-12"
-          :src="`/${dzikir.images}.png`"
+          :src="require(`~/assets/images/${dzikir.images}.png`)"
           :alt="`${dzikir.lafaz}`"
         />
       </div>
