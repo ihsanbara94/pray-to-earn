@@ -1,7 +1,7 @@
 export default {
   target: "static",
   router: {
-    base: "/assesment/",
+    base: "/pray-to-earn/",
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
