@@ -9,7 +9,8 @@
           :alt="`${dzikir.lafaz}`"
         />
       </div>
-      <Button content="+" @click="$emit('click')" />
+      <Button content="+" @click="$emit('click', value)" />
+
       <p class="text-3xl font-medium" :style="`color: ${dzikir.warna}`">
         {{ dzikir.counter }}
       </p>
