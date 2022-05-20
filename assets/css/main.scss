@@ -14,10 +14,23 @@ html {
     opacity: 0.7;
   }
 }
+.btn-success {
+  background-color: #0afa66;
+  color: white;
+  &:focus {
+    opacity: 0.7;
+  }
+}
+.btn-warning {
+  background-color: #fa3a0a;
+  color: white;
+  &:focus {
+    opacity: 0.7;
+  }
+}
 .btn-secondary {
-  background-color: white;
-  border: 1px solid #0a7dfa;
-  color: #0a7dfa;
+  background-color: rgb(8, 244, 220);
+  color: #094d95;
   &:focus {
     opacity: 0.7;
   }

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar />
     <div class="flex items-center px-10 space-x-3 justify-center">
       <img
         :src="require(`~/assets/images/pray.png`)"
@@ -11,6 +12,9 @@
   </div>
 </template>
 <script>
-export default {};
+import Navbar from "../components/Navbar.vue";
+export default {
+  components: { Navbar },
+};
 </script>
 <style></style>
