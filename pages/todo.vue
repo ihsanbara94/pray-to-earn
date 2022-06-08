@@ -4,7 +4,12 @@
     <div class="flex justify-center items-center space-x-3">
       <img class="w-10 h-10" src="~/assets/images/todo.png" alt="todo" />
       <p class="text-xl font-bold">
-        Todo <span> ({{ totalTodo }})</span>
+        Todo
+        <span>
+          ({{ totalTodo }})
+          <span class="text-red-400">({{ lengthPriority }})</span>
+          <del>({{ lengthDone }})</del>
+        </span>
       </p>
     </div>
     <div
@@ -76,7 +81,7 @@ export default {
         },
 
         {
-          actifity: "Baca Quran / Baca Buku",
+          actifity: "Baca Quran ",
           isDone: false,
           isPriority: true,
         },
@@ -109,6 +114,18 @@ export default {
   computed: {
     totalTodo() {
       return this.todos.length;
+    },
+    lengthDone() {
+      let newArrayD = this.todos.filter((el) => {
+        return el.isDone == true;
+      });
+      return newArrayD.length;
+    },
+    lengthPriority() {
+      let newArrayP = this.todos.filter((el) => {
+        return el.isPriority == true;
+      });
+      return newArrayP.length;
     },
   },
 

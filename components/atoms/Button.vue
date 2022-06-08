@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="`btn-${type} px-4 py-2 text-${textSize} rounded-full font-bold`"
+    :class="`btn-${type} lg:px-4 px-2 lg:py-2 py-1 text-10 lg:text-${textSize} rounded-full font-semibold lg:font-bold`"
     :disabled="disabled"
     @click="$emit('click')"
   >

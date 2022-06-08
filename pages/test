@@ -42,7 +42,24 @@ export default {
   data() {
     return {
       textInput: "Todo",
-      todos: [],
+
+      data: [
+        {
+          properties: "A",
+          isDone: true,
+        },
+        {
+          properties: "B",
+          isDone: false,
+        },
+        {
+          properties: "C",
+          isDone: false,
+        },
+      ]
+
+
+
     };
   },
   methods: {
