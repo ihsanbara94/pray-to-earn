@@ -27,10 +27,14 @@
         <p v-if="todo.isDone" class="w-full">
           <del>{{ todo.actifity }}</del>
         </p>
+        <p v-else-if="todo.isPriority" class="w-full">
+          <span class="text-red-400">{{ todo.actifity }}</span>
+        </p>
         <p v-else class="w-full">
           {{ todo.actifity }}
         </p>
 
+        <Button @click="priorityTodo(id)" type="priority" content="A1" />
         <Button @click="deleteTodo(id)" type="warning" content="x" />
         <Button @click="doneTodo(id)" type="secondary" content="Done" />
       </div>
@@ -47,47 +51,56 @@ export default {
   data() {
     return {
       todo: "",
+      todos: [],
 
-      todos: [
+      reset: [
         {
           actifity: "Bersihkkan Tempat Tidur",
           isDone: false,
+          isPriority: false,
         },
         {
           actifity: "Mandi",
           isDone: false,
+          isPriority: false,
         },
         {
           actifity: "Sholat Tahajud",
           isDone: false,
+          isPriority: false,
         },
         {
           actifity: "Sholat Shubuh",
           isDone: false,
+          isPriority: false,
         },
 
         {
           actifity: "Baca Quran / Baca Buku",
           isDone: false,
+          isPriority: true,
         },
         {
           actifity: "Sarapan",
           isDone: false,
+          isPriority: false,
         },
         {
           actifity: "Kerja",
           isDone: false,
+          isPriority: false,
         },
         {
           actifity: "Sholat Dhuha",
           isDone: false,
+          isPriority: false,
         },
       ],
     };
   },
 
   beforeMount() {
-    this.reset = this.todos;
+    this.todos = this.reset;
   },
   mounted() {
     this.todos = JSON.parse(localStorage.getItem("todos"));
@@ -104,6 +117,7 @@ export default {
       this.todos.push({
         actifity: this.todo,
         isDone: false,
+        isPriority: false,
       });
       this.todo = "";
       this.saveToLocalStorage();
@@ -113,6 +127,15 @@ export default {
         if (index != id) {
           return todo;
         }
+      });
+      this.saveToLocalStorage();
+    },
+    priorityTodo(index) {
+      this.todos = this.todos.filter((todo, id) => {
+        if (index == id) {
+          todo.isPriority = true;
+        }
+        return todo;
       });
       this.saveToLocalStorage();
     },
